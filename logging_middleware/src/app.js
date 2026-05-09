@@ -1,3 +1,11 @@
-const startService = require("./services/sampleService");
+const express = require("express");
 
-startService();
+const app = express();
+
+const schedulerRoutes = require("./routes/schedulerRoutes");
+
+app.use(express.json());
+
+app.use("/api/scheduler", schedulerRoutes);
+
+module.exports = app;

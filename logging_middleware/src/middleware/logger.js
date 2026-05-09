@@ -1,6 +1,6 @@
 const axios = require("axios");
 const config = require("../config");
-
+const access_token = config.access_token
 async function Log(stack, level, packageName, message) {
 
     try {
@@ -18,7 +18,7 @@ async function Log(stack, level, packageName, message) {
 
             {
                 headers: {
-                    Authorization: `Bearer ${config.AUTH_TOKEN}`,
+                    Authorization: `Bearer ${access_token}`,
                     "Content-Type": "application/json"
                 }
             }
